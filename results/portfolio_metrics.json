@@ -1,0 +1,48 @@
+{
+  "sample_size": 49408,
+  "train_size": 39526,
+  "test_size": 9882,
+  "train_start": "2002-08-17",
+  "train_end": "2020-10-24",
+  "test_start": "2020-10-24",
+  "test_end": "2024-05-19",
+  "feature_policy": "Only pre-match-available odds, static geography, league, and lagged five-match form",
+  "results": [
+    {
+      "model": "Always home win",
+      "accuracy": 0.4304796599878567,
+      "macro_f1": 0.20062252405206563,
+      "log_loss": null
+    },
+    {
+      "model": "Bookmaker favorite",
+      "accuracy": 0.49625581866019025,
+      "macro_f1": 0.36716182910032624,
+      "log_loss": 1.0173271269495558
+    },
+    {
+      "model": "Logistic regression - odds only",
+      "accuracy": 0.460635498886865,
+      "macro_f1": 0.4296692357682344,
+      "log_loss": 1.0430596487275465
+    },
+    {
+      "model": "Logistic regression - pre-match features",
+      "accuracy": 0.45780206435944143,
+      "macro_f1": 0.4241884846705692,
+      "log_loss": 1.043044163140641
+    },
+    {
+      "model": "Random forest - pre-match features",
+      "accuracy": 0.4627605747824327,
+      "macro_f1": 0.43116595026070303,
+      "log_loss": 1.0444026377361892
+    },
+    {
+      "model": "MLP - pre-match features",
+      "accuracy": 0.4916008905079943,
+      "macro_f1": 0.3711072628074654,
+      "log_loss": 1.0210502766245582
+    }
+  ]
+}
