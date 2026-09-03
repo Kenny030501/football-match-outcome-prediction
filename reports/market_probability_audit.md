@@ -61,9 +61,16 @@ The decision follows pre-specified rules across four expanding-window test seaso
 - overround: 5 slices
 - season: 4 slices
 
-## Evidence boundary
+## Scope and limitations
 
-- This is a third-party probability audit, not a betting strategy or profitability test.
-- The primary baseline is the normalized market-average closing 1X2 price.
-- Public features are computed strictly from matches completed before the current date.
-- Lineups, injuries, xG, weather, and paid feeds are outside the study.
+### This analysis supports
+
+- In the tested English-league sample, raw market probabilities were already closely calibrated.
+- The selected recalibration did not deliver a robust out-of-time improvement.
+- The selected public pre-match features worsened performance under the pre-specified rule.
+
+### This analysis does not establish
+
+- That every football market or proprietary vendor model is efficient.
+- That richer lineups, injuries, xG, weather, or paid data have no value.
+- That no profitable betting strategy can exist or that the result will persist indefinitely.

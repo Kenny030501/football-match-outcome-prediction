@@ -127,13 +127,25 @@ and result changes reviewable.
 | `notebooks/01_market_probability_audit.ipynb` | Thin presentation layer over generated artifacts |
 | `archive/` | First leakage-corrected portfolio reconstruction, excluded from current results |
 
-## Attribution and evidence boundary
+## Attribution
 
 The original 2025 CIS 5450 project was created by Lucas Qu, Leo Lin, and Hongru
 Da. The original team notebook is not distributed in this repository, and its
 leakage-affected headline metrics are not the source of the current
 recommendation. The market-audit reconstruction is maintained by Hongru Da; see
 [`CONTRIBUTIONS.md`](CONTRIBUTIONS.md) and [`NOTICE.md`](NOTICE.md).
+
+## Scope and limitations
+
+This analysis supports the conclusion that raw market probabilities were
+already closely calibrated in the tested English-league sample, the selected
+recalibration did not improve robustly, and the selected public pre-match
+features worsened performance under the pre-specified rule.
+
+It does not establish that every football market or proprietary vendor model is
+efficient, that richer lineups, injuries, xG, weather, or paid data have no
+value, or that no profitable strategy can exist. The findings are limited to
+the stated leagues, seasons, data, models, and evaluation design.
 
 Football-Data.co.uk states that its files are free but does not provide a clear
 open-data license or correctness guarantee on the reviewed pages. Raw files are
