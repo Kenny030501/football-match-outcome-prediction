@@ -1,137 +1,142 @@
-# Can Models Beat the Market?
+# When Should We Trust Market Probabilities?
 
-## A leakage-audited football forecasting study
+## A temporal audit of third-party football forecasts
 
-This repository is a reproducible audit and portfolio reconstruction of a 2025
-University of Pennsylvania CIS 5450 team project by Lucas Qu, Leo Lin, and
-Hongru Da.
+This project independently audits English football market probabilities rather
+than trying to outbuild a professional sports-data company. It asks whether
+normalized market-average closing probabilities should be used as-is,
+recalibrated, or augmented with simple public pre-match information.
 
-The project asks a deliberately narrow question:
+> **Build-vs-buy decision: use the market probabilities as-is.**
 
-> How much of an English football match outcome can be predicted using only
-> information available before kickoff, and do simple public features add value
-> beyond bookmaker prices?
+Across four expanding-window test seasons, recalibration does not produce a
+robust improvement. Adding Elo, recent form, rest, league, and season progress
+worsens log loss in all four test seasons. The result is a model-risk and vendor
+evaluation finding, not a betting strategy.
 
-The main result is negative but useful. Once same-match information is removed
-and the holdout is moved forward in time, the enriched models do not beat the
-bookmaker-favorite rule on accuracy or log loss. The portfolio value of the
-project is therefore its research design, leakage audit, temporal evaluation,
-and willingness to report a failed hypothesis rather than a larger headline
-metric.
+## Why this project matters
 
-## Executive result
+Organizations often buy external scores, forecasts, and AI services. They still
+need to determine whether those outputs are calibrated, stable across time and
+groups, and worth supplementing with internal data. This repository demonstrates
+that evaluation workflow with football probabilities as a public, reproducible
+case.
 
-- 49,408 matches in the currently reproduced sample
-- Training period: August 2002 to October 2020
-- Chronological holdout: October 2020 to May 2024
-- Best accuracy and log loss: bookmaker favorite
-- Best macro F1: random forest using pre-match features
-- Defensible conclusion: the added public features contain limited incremental
-  signal beyond the selected bookmaker odds in this specification
+The project complements a model-building portfolio: it focuses on when not to
+build, how to validate a third-party probability, and how to report a negative
+result without model chasing.
 
-## Why this repository has two versions
+## Data and point-in-time design
 
-The archived course notebook reported 54-56% accuracy for Random Forest and MLP
-models. Its advanced-model feature table included same-match statistics and a
-`HighScoring` variable derived from final goals. Those figures demonstrate model
-fitting, but they are not valid pre-match forecasts.
+- Source: [Football-Data.co.uk](https://www.football-data.co.uk/englandm.php)
+- Warm-up: 2017/18-2018/19, used only to initialize lagged team state
+- Audit sample: 2019/20-2025/26
+- Coverage: Premier League through National League (`E0`, `E1`, `E2`, `E3`, `EC`)
+- Files: 45 downloaded CSVs
+- Accepted rows: 22,806, including 17,630 audit matches
+- Primary third-party forecast: `AvgCH`, `AvgCD`, and `AvgCA` market-average closing odds
 
-The portfolio pipeline in `src/portfolio_pipeline.py` changes the research
-design:
+All matches on the same date receive their feature snapshot before any result
+from that date updates Elo, form, or rest state. Same-match goals, shots, cards,
+corners, and half-time information are forbidden model features. The static 2015
+stadium source and travel-distance feature have been removed.
 
-- Matches are sorted chronologically before splitting.
-- The most recent 20% of observations form the holdout set.
-- Scalers and imputers are fitted on training data only.
-- Same-match goals, shots, cards, corners, and other post-kickoff information
-  are excluded.
-- Features are limited to bookmaker odds, normalized implied probabilities,
-  static travel distance, league, and five-match lagged form.
-
-The output-stripped team notebook is retained only for provenance and carries a
-leakage warning at the top.
-
-## Corrected holdout results
-
-| Model | Accuracy | Macro F1 | Log loss |
-| --- | ---: | ---: | ---: |
-| Always home win | 43.05% | 20.06% | - |
-| Bookmaker favorite | **49.63%** | 36.72% | **1.017** |
-| Logistic regression, odds only | 46.06% | 42.97% | 1.043 |
-| Logistic regression, all pre-match features | 45.78% | 42.42% | 1.043 |
-| Random forest, all pre-match features | 46.28% | **43.12%** | 1.044 |
-| MLP, all pre-match features | 49.16% | 37.11% | 1.021 |
-
-## Data evidence boundary
-
-The primary match source is
-[Football-Data.co.uk](https://www.football-data.co.uk/englandm.php). The raw CSV
-files are downloaded at runtime and excluded from Git.
-
-Important qualifications:
-
-- Bet365 `B365H/B365D/B365A` fields are documented as pre-closing odds, not a
-  consistent closing-market consensus. Closing fields become available in the
-  source files only from 2019/20 onward.
-- The provider's column set changes materially across seasons and leagues.
-- Several 2002/03-2004/05 files contain irregular trailing fields that the
-  current Pandas reader rejects, causing the current pipeline to omit 5,158
-  otherwise usable rows.
-- The 2015 stadium reference covers only 49.46% of the currently reproduced
-  match rows and is not reliable for historical venue changes. Travel distance
-  should be treated as an experimental feature, not a core result.
-- The source site states that the files are free, but the reviewed pages do not
-  provide a clear open-data license or guarantee correctness. This repository
-  does not redistribute the raw files.
-
-The full source audit and replacement options are documented in
+See [`reports/data_quality.md`](reports/data_quality.md) and
 [`docs/data-source-assessment.md`](docs/data-source-assessment.md).
 
-## Ownership and attribution
+## Models and evaluation
 
-The original notebook is a collective team artifact. The public repository does
-not contain a contemporaneous task log that would support assigning individual
-course sections to specific members.
+| Model | Role |
+| --- | --- |
+| `market_raw` | Normalized market-average closing probabilities |
+| `market_recalibrated` | Multinomial logistic recalibration of market probabilities |
+| `market_plus_public` | Regularized multinomial logistic model with market, Elo, form, rest, league, and season features |
 
-The leakage-audited portfolio reconstruction is maintained by Hongru Da. See
-[`CONTRIBUTIONS.md`](CONTRIBUTIONS.md) and [`NOTICE.md`](NOTICE.md) for the
-verified attribution boundary.
+The outer evaluation uses four expanding windows, testing separately on
+2022/23, 2023/24, 2024/25, and 2025/26. Primary metrics are multiclass log loss
+and Brier score. Confidence intervals use 2,000 clustered bootstrap resamples by
+season and ISO week with seed 42.
+
+### Pooled out-of-time results
+
+| Model | Log loss | Brier | Accuracy | Macro F1 |
+| --- | ---: | ---: | ---: | ---: |
+| Market raw | **1.0163** | **0.6093** | 49.53% | 0.3647 |
+| Market recalibrated | 1.0166 | 0.6096 | 49.54% | 0.3643 |
+| Market + public features | 1.0222 | 0.6113 | 49.29% | 0.3653 |
+
+Recalibration minus raw-market log loss is `+0.00030`, with a 95% interval of
+`[-0.00030, +0.00090]`. Public-feature augmentation minus recalibration is
+`+0.00561`, with a 95% interval of `[+0.00251, +0.01033]`; lower is better.
+
+The raw market's pooled expected calibration error is 0.008 for home wins,
+0.006 for draws, and 0.011 for away wins. Its argmax decision almost never picks
+a draw, which illustrates why calibrated probabilities and class decisions must
+be evaluated separately.
+
+![Out-of-time log loss](results/figures/rolling_log_loss.png)
+
+![Pooled class calibration](results/figures/calibration_by_class.png)
+
+The complete results and subgroup tables are in
+[`reports/market_probability_audit.md`](reports/market_probability_audit.md).
+
+## Decision rule
+
+Recalibration qualifies only if it improves both log loss and Brier score in at
+least three of four test seasons and the pooled paired log-loss interval is
+strictly below zero. Public-feature augmentation must clear the same rule after
+recalibration qualifies. Otherwise the simpler external probability remains the
+default.
+
+Neither local model clears the rule.
+
+## Reproducible workflow
+
+```text
+45 source CSVs
+    -> download manifest and SHA-256 hashes
+    -> strict named-column parsing and quarantine
+    -> canonical point-in-time feature table
+    -> four expanding-window tests
+    -> calibration, drift, and slice audit
+    -> use / recalibrate / augment decision
+```
+
+```bash
+uv sync
+uv run python scripts/build_dataset.py
+uv run python scripts/run_audit.py
+uv run pytest -q
+```
+
+Use `--refresh` with `build_dataset.py` to fetch every source file again. Raw
+CSVs, canonical match data, predictions, and model objects are excluded from
+Git. The committed manifest, metrics, figures, and reports make source changes
+and result changes reviewable.
 
 ## Repository map
 
 | Path | Purpose |
 | --- | --- |
-| `src/portfolio_pipeline.py` | Corrected pre-match-only data and modeling pipeline |
-| `results/portfolio_metrics.json` | Reproduced holdout metrics |
-| `notebooks/original-team-notebook.ipynb` | Output-stripped team archive with a leakage warning |
-| `docs/data-source-assessment.md` | Reacquisition, quality, licensing, and source alternatives |
-| `CONTRIBUTIONS.md` | Team and portfolio-reconstruction attribution boundary |
-| `NOTICE.md` | Reuse notice |
+| `src/football_audit/` | Acquisition, validation, point-in-time features, models, evaluation, and reporting |
+| `scripts/` | Stable dataset-build and audit commands |
+| `tests/` | Data, temporal-boundary, determinism, and no-leakage tests |
+| `results/` | Manifest, machine-readable metrics, subgroup tables, and figures |
+| `reports/` | Human-readable data-quality and market-audit conclusions |
+| `notebooks/01_market_probability_audit.ipynb` | Thin presentation layer over generated artifacts |
+| `notebooks/original-team-notebook.ipynb` | Output-stripped original team artifact with a leakage warning |
+| `archive/` | First leakage-corrected portfolio reconstruction, excluded from current results |
 
-## Run
+## Attribution and evidence boundary
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-python src/portfolio_pipeline.py
-```
+The original 2025 CIS 5450 project was created by Lucas Qu, Leo Lin, and Hongru
+Da. Its archived notebook reported leakage-affected headline metrics and is not
+the source of the current recommendation. The market-audit reconstruction is
+maintained by Hongru Da; see [`CONTRIBUTIONS.md`](CONTRIBUTIONS.md) and
+[`NOTICE.md`](NOTICE.md).
 
-Match CSVs are cached under `data/raw/`, which is excluded from version control.
-The current command is reproducible for the reported 49,408-row result when the
-existing parser accepts the source files. Repairing the early-season parser and
-adding a download manifest are the next data-engineering priorities.
-
-## Limitations and next validation step
-
-- The holdout is one chronological split rather than a rolling-origin study.
-- Bookmaker odds are strong information aggregates and dominate the small set
-  of engineered features.
-- The current odds baseline is one bookmaker's pre-closing snapshot, not the
-  complete closing market.
-- Team-form features do not capture injuries, lineups, managers, transfers, or
-  expected goals.
-- Accuracy is not a profitability test; no betting strategy or transaction
-  economics are claimed.
-
-The next version should first repair ingestion, remove or replace the stadium
-feature, and add rolling-origin evaluation with paired uncertainty intervals.
+Football-Data.co.uk states that its files are free but does not provide a clear
+open-data license or correctness guarantee on the reviewed pages. Raw files are
+therefore downloaded at runtime and are not redistributed. No result here is a
+profitability claim or betting recommendation.

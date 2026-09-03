@@ -1,0 +1,1222 @@
+{
+  "class_order": [
+    "H",
+    "D",
+    "A"
+  ],
+  "audit_rows": 17630,
+  "evaluated_rows": 10352,
+  "bootstrap_resamples": 2000,
+  "random_seed": 42,
+  "folds": [
+    {
+      "name": "test_2223",
+      "train_seasons": [
+        "1920",
+        "2021",
+        "2122"
+      ],
+      "test_season": "2223"
+    },
+    {
+      "name": "test_2324",
+      "train_seasons": [
+        "1920",
+        "2021",
+        "2122",
+        "2223"
+      ],
+      "test_season": "2324"
+    },
+    {
+      "name": "test_2425",
+      "train_seasons": [
+        "1920",
+        "2021",
+        "2122",
+        "2223",
+        "2324"
+      ],
+      "test_season": "2425"
+    },
+    {
+      "name": "test_2526",
+      "train_seasons": [
+        "1920",
+        "2021",
+        "2122",
+        "2223",
+        "2324",
+        "2425"
+      ],
+      "test_season": "2526"
+    }
+  ],
+  "metric_records": [
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_raw",
+      "metric": "log_loss",
+      "value": 1.0165415839869227,
+      "ci_low": 1.0051322280233428,
+      "ci_high": 1.0291741595098327
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_raw",
+      "metric": "brier",
+      "value": 0.6098936944110138,
+      "ci_low": 0.6019135761649549,
+      "ci_high": 0.6185361634361753
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_raw",
+      "metric": "accuracy",
+      "value": 0.49265842349304484,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_raw",
+      "metric": "macro_f1",
+      "value": 0.3639103313038701,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_raw",
+      "metric": "recall_home",
+      "value": 0.7937777777777778,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_raw",
+      "metric": "recall_draw",
+      "value": 0.0,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_raw",
+      "metric": "recall_away",
+      "value": 0.48662420382165605,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_raw",
+      "metric": "ece_h",
+      "value": 0.016763067914343455,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_raw",
+      "metric": "ece_d",
+      "value": 0.004206069167720811,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_raw",
+      "metric": "ece_a",
+      "value": 0.01597259350901047,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_recalibrated",
+      "metric": "log_loss",
+      "value": 1.0177104552984622,
+      "ci_low": 1.005394864190997,
+      "ci_high": 1.0308190312429946
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_recalibrated",
+      "metric": "brier",
+      "value": 0.6106182545697448,
+      "ci_low": 0.6016803242650145,
+      "ci_high": 0.6198458183627366
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_recalibrated",
+      "metric": "accuracy",
+      "value": 0.49304482225656876,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_recalibrated",
+      "metric": "macro_f1",
+      "value": 0.3639995297167404,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_recalibrated",
+      "metric": "recall_home",
+      "value": 0.7973333333333333,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_recalibrated",
+      "metric": "recall_draw",
+      "value": 0.0,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_recalibrated",
+      "metric": "recall_away",
+      "value": 0.48280254777070064,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_recalibrated",
+      "metric": "ece_h",
+      "value": 0.012648228186978873,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_recalibrated",
+      "metric": "ece_d",
+      "value": 0.009121177611323309,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_recalibrated",
+      "metric": "ece_a",
+      "value": 0.016810601703309908,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_plus_public",
+      "metric": "log_loss",
+      "value": 1.0241667461047488,
+      "ci_low": 1.01143173214853,
+      "ci_high": 1.036794166025348
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_plus_public",
+      "metric": "brier",
+      "value": 0.6131218702979073,
+      "ci_low": 0.6039527990576865,
+      "ci_high": 0.6223923509014575
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_plus_public",
+      "metric": "accuracy",
+      "value": 0.49149922720247297,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_plus_public",
+      "metric": "macro_f1",
+      "value": 0.3635977134351096,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_plus_public",
+      "metric": "recall_home",
+      "value": 0.7964444444444444,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_plus_public",
+      "metric": "recall_draw",
+      "value": 0.0014749262536873156,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_plus_public",
+      "metric": "recall_away",
+      "value": 0.47770700636942676,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_plus_public",
+      "metric": "ece_h",
+      "value": 0.011432160673345383,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_plus_public",
+      "metric": "ece_d",
+      "value": 0.014695459942524546,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2223",
+      "test_season": "2223",
+      "model": "market_plus_public",
+      "metric": "ece_a",
+      "value": 0.016264882802957025,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_raw",
+      "metric": "log_loss",
+      "value": 1.0139343020947647,
+      "ci_low": 0.9981718503217253,
+      "ci_high": 1.0298743431860868
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_raw",
+      "metric": "brier",
+      "value": 0.6069767916075165,
+      "ci_low": 0.5955730637333878,
+      "ci_high": 0.6178902182133863
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_raw",
+      "metric": "accuracy",
+      "value": 0.49420401854714063,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_raw",
+      "metric": "macro_f1",
+      "value": 0.35976214583570215,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_raw",
+      "metric": "recall_home",
+      "value": 0.7948943661971831,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_raw",
+      "metric": "recall_draw",
+      "value": 0.0016181229773462784,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_raw",
+      "metric": "recall_away",
+      "value": 0.44964028776978415,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_raw",
+      "metric": "ece_h",
+      "value": 0.011383242286865715,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_raw",
+      "metric": "ece_d",
+      "value": 0.015664066073455853,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_raw",
+      "metric": "ece_a",
+      "value": 0.016480426891170456,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_recalibrated",
+      "metric": "log_loss",
+      "value": 1.0138711185673672,
+      "ci_low": 0.9966544075323748,
+      "ci_high": 1.0320897322136562
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_recalibrated",
+      "metric": "brier",
+      "value": 0.6070473829083841,
+      "ci_low": 0.5947381057549195,
+      "ci_high": 0.618549029933625
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_recalibrated",
+      "metric": "accuracy",
+      "value": 0.49420401854714063,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_recalibrated",
+      "metric": "macro_f1",
+      "value": 0.3588430605441541,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_recalibrated",
+      "metric": "recall_home",
+      "value": 0.795774647887324,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_recalibrated",
+      "metric": "recall_draw",
+      "value": 0.0,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_recalibrated",
+      "metric": "recall_away",
+      "value": 0.44964028776978415,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_recalibrated",
+      "metric": "ece_h",
+      "value": 0.01907788022718967,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_recalibrated",
+      "metric": "ece_d",
+      "value": 0.00886133688891715,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_recalibrated",
+      "metric": "ece_a",
+      "value": 0.016345980821847753,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_plus_public",
+      "metric": "log_loss",
+      "value": 1.0265398373268537,
+      "ci_low": 1.0046279565267444,
+      "ci_high": 1.050802502066544
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_plus_public",
+      "metric": "brier",
+      "value": 0.6099103546442276,
+      "ci_low": 0.5971436156636941,
+      "ci_high": 0.6222790161973536
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_plus_public",
+      "metric": "accuracy",
+      "value": 0.4918856259659969,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_plus_public",
+      "metric": "macro_f1",
+      "value": 0.3605591609396816,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_plus_public",
+      "metric": "recall_home",
+      "value": 0.7799295774647887,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_plus_public",
+      "metric": "recall_draw",
+      "value": 0.003236245954692557,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_plus_public",
+      "metric": "recall_away",
+      "value": 0.4616306954436451,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_plus_public",
+      "metric": "ece_h",
+      "value": 0.02819558082538341,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_plus_public",
+      "metric": "ece_d",
+      "value": 0.005370528197116828,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2324",
+      "test_season": "2324",
+      "model": "market_plus_public",
+      "metric": "ece_a",
+      "value": 0.026910259120432798,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_raw",
+      "metric": "log_loss",
+      "value": 1.0207793185257583,
+      "ci_low": 1.0085882825861487,
+      "ci_high": 1.033006993306438
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_raw",
+      "metric": "brier",
+      "value": 0.6125629052703275,
+      "ci_low": 0.6042805663840546,
+      "ci_high": 0.6213105336674466
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_raw",
+      "metric": "accuracy",
+      "value": 0.4918856259659969,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_raw",
+      "metric": "macro_f1",
+      "value": 0.3661303211575743,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_raw",
+      "metric": "recall_home",
+      "value": 0.8010801080108011,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_raw",
+      "metric": "recall_draw",
+      "value": 0.0014367816091954023,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_raw",
+      "metric": "recall_away",
+      "value": 0.48911651728553135,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_raw",
+      "metric": "ece_h",
+      "value": 0.016439478329314514,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_raw",
+      "metric": "ece_d",
+      "value": 0.008134400885167809,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_raw",
+      "metric": "ece_a",
+      "value": 0.022293459223874462,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_recalibrated",
+      "metric": "log_loss",
+      "value": 1.0213958866203574,
+      "ci_low": 1.0081605710058248,
+      "ci_high": 1.0344017751084251
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_recalibrated",
+      "metric": "brier",
+      "value": 0.6129371765509762,
+      "ci_low": 0.6042237488182174,
+      "ci_high": 0.6226249638661554
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_recalibrated",
+      "metric": "accuracy",
+      "value": 0.49149922720247297,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_recalibrated",
+      "metric": "macro_f1",
+      "value": 0.3650206413955091,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_recalibrated",
+      "metric": "recall_home",
+      "value": 0.8010801080108011,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_recalibrated",
+      "metric": "recall_draw",
+      "value": 0.0,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_recalibrated",
+      "metric": "recall_away",
+      "value": 0.48911651728553135,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_recalibrated",
+      "metric": "ece_h",
+      "value": 0.011768487813323661,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_recalibrated",
+      "metric": "ece_d",
+      "value": 0.020004765124801382,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_recalibrated",
+      "metric": "ece_a",
+      "value": 0.02063478524491478,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_plus_public",
+      "metric": "log_loss",
+      "value": 1.0235978285616356,
+      "ci_low": 1.0108119938418838,
+      "ci_high": 1.0364573881023549
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_plus_public",
+      "metric": "brier",
+      "value": 0.6136058384335195,
+      "ci_low": 0.6043616727992597,
+      "ci_high": 0.6233893569600544
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_plus_public",
+      "metric": "accuracy",
+      "value": 0.48763523956723337,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_plus_public",
+      "metric": "macro_f1",
+      "value": 0.3647006587427124,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_plus_public",
+      "metric": "recall_home",
+      "value": 0.7803780378037803,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_plus_public",
+      "metric": "recall_draw",
+      "value": 0.0014367816091954023,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_plus_public",
+      "metric": "recall_away",
+      "value": 0.5044814340588989,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_plus_public",
+      "metric": "ece_h",
+      "value": 0.01879377595410946,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_plus_public",
+      "metric": "ece_d",
+      "value": 0.023944072181653637,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2425",
+      "test_season": "2425",
+      "model": "market_plus_public",
+      "metric": "ece_a",
+      "value": 0.01735327980942323,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_raw",
+      "metric": "log_loss",
+      "value": 1.0140238313712415,
+      "ci_low": 0.9989626282002454,
+      "ci_high": 1.028995045372372
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_raw",
+      "metric": "brier",
+      "value": 0.6079139769149573,
+      "ci_low": 0.5972759152589204,
+      "ci_high": 0.6187168799590745
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_raw",
+      "metric": "accuracy",
+      "value": 0.5023183925811437,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_raw",
+      "metric": "macro_f1",
+      "value": 0.3689340274211996,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_raw",
+      "metric": "recall_home",
+      "value": 0.8155774395702775,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_raw",
+      "metric": "recall_draw",
+      "value": 0.0,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_raw",
+      "metric": "recall_away",
+      "value": 0.47613219094247244,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_raw",
+      "metric": "ece_h",
+      "value": 0.01949432775672091,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_raw",
+      "metric": "ece_d",
+      "value": 0.010548978844277204,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_raw",
+      "metric": "ece_a",
+      "value": 0.01839766723023388,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_recalibrated",
+      "metric": "log_loss",
+      "value": 1.0134972662946418,
+      "ci_low": 0.99786596356674,
+      "ci_high": 1.0295367050069262
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_recalibrated",
+      "metric": "brier",
+      "value": 0.6076224157415344,
+      "ci_low": 0.5966151950170541,
+      "ci_high": 0.6189598303153274
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_recalibrated",
+      "metric": "accuracy",
+      "value": 0.5027047913446677,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_recalibrated",
+      "metric": "macro_f1",
+      "value": 0.3692128974943744,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_recalibrated",
+      "metric": "recall_home",
+      "value": 0.8164726947179947,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_recalibrated",
+      "metric": "recall_draw",
+      "value": 0.0,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_recalibrated",
+      "metric": "recall_away",
+      "value": 0.47613219094247244,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_recalibrated",
+      "metric": "ece_h",
+      "value": 0.009564495810908987,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_recalibrated",
+      "metric": "ece_d",
+      "value": 0.001477251689080446,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_recalibrated",
+      "metric": "ece_a",
+      "value": 0.017085808026232458,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_plus_public",
+      "metric": "log_loss",
+      "value": 1.0146265725943662,
+      "ci_low": 0.9975281096993445,
+      "ci_high": 1.0300281614769364
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_plus_public",
+      "metric": "brier",
+      "value": 0.6085041840254797,
+      "ci_low": 0.5965178380672832,
+      "ci_high": 0.6201517732050933
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_plus_public",
+      "metric": "accuracy",
+      "value": 0.500386398763524,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_plus_public",
+      "metric": "macro_f1",
+      "value": 0.3722943722943723,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_plus_public",
+      "metric": "recall_home",
+      "value": 0.7726051924798567,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_plus_public",
+      "metric": "recall_draw",
+      "value": 0.0,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_plus_public",
+      "metric": "recall_away",
+      "value": 0.5287637698898409,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_plus_public",
+      "metric": "ece_h",
+      "value": 0.013275054188237807,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_plus_public",
+      "metric": "ece_d",
+      "value": 0.00611868896214388,
+      "ci_low": null,
+      "ci_high": null
+    },
+    {
+      "fold": "test_2526",
+      "test_season": "2526",
+      "model": "market_plus_public",
+      "metric": "ece_a",
+      "value": 0.0157721245011854,
+      "ci_low": null,
+      "ci_high": null
+    }
+  ],
+  "pooled_metrics": {
+    "market_raw": {
+      "log_loss": 1.0163197589946715,
+      "brier": 0.6093368420509537,
+      "accuracy": 0.4952666151468315,
+      "macro_f1": 0.3646596388288232,
+      "recall_home": 0.8012920472265538,
+      "recall_draw": 0.0007558578987150416,
+      "recall_away": 0.47497668635374574,
+      "ece_h": 0.007990553160031706,
+      "ece_d": 0.005952195292519425,
+      "ece_a": 0.011057128624390776
+    },
+    "market_recalibrated": {
+      "log_loss": 1.0166186816952072,
+      "brier": 0.6095563074426599,
+      "accuracy": 0.4953632148377125,
+      "macro_f1": 0.3642499732543194,
+      "recall_home": 0.8026286478057474,
+      "recall_draw": 0.0,
+      "recall_away": 0.47404414050357474,
+      "ece_h": 0.006718351769062607,
+      "ece_d": 0.006261218343771269,
+      "ece_a": 0.009071832620939137
+    },
+    "market_plus_public": {
+      "log_loss": 1.022232746146901,
+      "brier": 0.6112855618502836,
+      "accuracy": 0.4928516228748068,
+      "macro_f1": 0.36534363171450074,
+      "recall_home": 0.7823568723546447,
+      "recall_draw": 0.0015117157974300832,
+      "recall_away": 0.49300590612371775,
+      "ece_h": 0.009905857211034756,
+      "ece_d": 0.009410090041138349,
+      "ece_a": 0.009069826483792993
+    }
+  },
+  "comparisons": [
+    {
+      "candidate": "market_recalibrated",
+      "baseline": "market_raw",
+      "metric": "log_loss",
+      "delta": 0.00029892270053532535,
+      "ci_low": -0.0002967491911483607,
+      "ci_high": 0.0008958065871250577,
+      "folds_improved": 2,
+      "folds_total": 4
+    },
+    {
+      "candidate": "market_recalibrated",
+      "baseline": "market_raw",
+      "metric": "brier",
+      "delta": 0.0002194653917061313,
+      "ci_low": -0.00017660235422359519,
+      "ci_high": 0.0006021115307760586,
+      "folds_improved": 1,
+      "folds_total": 4
+    },
+    {
+      "candidate": "market_plus_public",
+      "baseline": "market_recalibrated",
+      "metric": "log_loss",
+      "delta": 0.005614064451694032,
+      "ci_low": 0.0025064932707790336,
+      "ci_high": 0.010325882025100592,
+      "folds_improved": 0,
+      "folds_total": 4
+    },
+    {
+      "candidate": "market_plus_public",
+      "baseline": "market_recalibrated",
+      "metric": "brier",
+      "delta": 0.001729254407623663,
+      "ci_low": 0.0008743936808507233,
+      "ci_high": 0.002622212924188057,
+      "folds_improved": 0,
+      "folds_total": 4
+    }
+  ],
+  "decision": {
+    "recommendation": "use_market_probabilities_as_is",
+    "calibration_qualifies": false,
+    "augmentation_qualifies": false
+  }
+}
