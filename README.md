@@ -125,16 +125,15 @@ and result changes reviewable.
 | `results/` | Manifest, machine-readable metrics, subgroup tables, and figures |
 | `reports/` | Human-readable data-quality and market-audit conclusions |
 | `notebooks/01_market_probability_audit.ipynb` | Thin presentation layer over generated artifacts |
-| `notebooks/original-team-notebook.ipynb` | Output-stripped original team artifact with a leakage warning |
 | `archive/` | First leakage-corrected portfolio reconstruction, excluded from current results |
 
 ## Attribution and evidence boundary
 
 The original 2025 CIS 5450 project was created by Lucas Qu, Leo Lin, and Hongru
-Da. Its archived notebook reported leakage-affected headline metrics and is not
-the source of the current recommendation. The market-audit reconstruction is
-maintained by Hongru Da; see [`CONTRIBUTIONS.md`](CONTRIBUTIONS.md) and
-[`NOTICE.md`](NOTICE.md).
+Da. The original team notebook is not distributed in this repository, and its
+leakage-affected headline metrics are not the source of the current
+recommendation. The market-audit reconstruction is maintained by Hongru Da; see
+[`CONTRIBUTIONS.md`](CONTRIBUTIONS.md) and [`NOTICE.md`](NOTICE.md).
 
 Football-Data.co.uk states that its files are free but does not provide a clear
 open-data license or correctness guarantee on the reviewed pages. Raw files are

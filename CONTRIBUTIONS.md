@@ -8,10 +8,10 @@ The 2025 CIS 5450 course project was jointly created by:
 - Leo Lin
 - Hongru Da
 
-The archived notebook is preserved as a collective team artifact. This public
-repository does not contain a contemporaneous contribution log, so it does not
-assign particular notebook sections, models, charts, or presentation slides to
-individual team members.
+The original notebook is a collective team artifact and is not distributed in
+this public repository. The repository does not contain a contemporaneous
+contribution log, so it does not assign particular notebook sections, models,
+charts, or presentation slides to individual team members.
 
 ## Portfolio reconstruction
 
@@ -35,6 +35,6 @@ the original team project as the sole work of one contributor.
 
 ## Reuse boundary
 
-The archived team notebook and presentation materials remain collective course
-artifacts. No license is granted for their reuse. Raw third-party data is not
-redistributed in this repository.
+The original team notebook and presentation materials remain collective course
+artifacts and are not distributed here. No license is granted for their reuse.
+Raw third-party data is not redistributed in this repository.
